@@ -32,4 +32,4 @@ jobs:
 
       - name: Execute Tests
         run: |
-          python3 -m unittest tests.test.Test.successful_login 
+          python3 -m unittest discover

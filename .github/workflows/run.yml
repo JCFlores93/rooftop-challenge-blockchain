@@ -1,0 +1,21 @@
+name: Execute rooftop challenge
+
+on:
+  push:
+    branches:
+      - "master"
+
+env:
+  EMAIL: ${{ secrets.EMAIL }}
+  ROOT_URL: ${{ secrets.ROOT_URL }}
+
+jobs:
+  challenge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Challenge
+        run: |
+          ./main.py

@@ -29,3 +29,7 @@ jobs:
       - name: Run Challenge
         run: |
           ./main.py
+
+      - name: Execute Tests
+        run: |
+          python3 -m unittest tests.test.Test.successful_login 

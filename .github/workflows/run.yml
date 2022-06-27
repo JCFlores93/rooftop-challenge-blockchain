@@ -26,10 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
+      - name: Execute Tests
+        run: |
+          EMAIL=${{ env.EMAIL }} ROOT_URL=${{ env.ROOT_URL }} python3 -m unittest 
+
       - name: Run Challenge
         run: |
           ./main.py
-
-      - name: Execute Tests
-        run: |
-          EMAIL=${{ env.EMAIL }} ROOT_URL=${{ env.ROOT_URL }} python3 -m unittest discover -s tests/
